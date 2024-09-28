@@ -1,4 +1,4 @@
-const peer = new Peer();
+const peer = new Peer('koko-labs-code.1209dje.code');
 let conn;
 
 peer.on('open', (id) => {
