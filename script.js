@@ -3,7 +3,7 @@ let conn;
 
 peer.on('open', (id) => {
     console.log('My peer ID is: ' + id);
-    alert('Your peer ID is: ' + id);
+    alert(`Your peer ID is: ${id} or go to this URL: https://kokos-labs.github.io/currency/test.html?id=${encodeURIComponent(id)}`);
 });
 
 peer.on('connection', (connection) => {
@@ -14,7 +14,9 @@ peer.on('connection', (connection) => {
 });
 
 function connectPeer() {
-    const peerId = prompt('Enter peer ID:');
+    let peerId = getQueryParam('id')
+    if(peerId === null){
+    peerId = prompt('Enter peer ID:');}else{peerId = decodeURIComponent(peerId)}
     conn = peer.connect(peerId);
     conn.on('open', () => {
         console.log('Connected to: ' + peerId);
@@ -31,4 +33,10 @@ function sendData() {
     } else {
         alert('Not connected to any peer');
     }
+}
+
+function getQueryParam(param) {
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    return params.get(param) ? params.get(param) : null
 }
