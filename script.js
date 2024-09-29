@@ -43,7 +43,7 @@ function getQueryParam(param) {
 }
 
 function* codeGenerator() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const characters = 'qwertyuiopasdfghjklzxcvbnm-0123456789';
     while (true) {
         let code = '';
         for (let i = 0; i < 6; i++) {
