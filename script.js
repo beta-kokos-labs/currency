@@ -1,4 +1,4 @@
-const peer = new Peer('live-test-1234567890');
+const peer = new Peer('koko-currency-id='+generateCode.next().value);
 let conn;
 
 peer.on('open', (id) => {
@@ -41,3 +41,19 @@ function getQueryParam(param) {
     console.log(params.get(param))
     return params.get(param)
 }
+
+function* codeGenerator() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    while (true) {
+        let code = '';
+        for (let i = 0; i < 6; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            code += characters[randomIndex];
+        }
+        yield code;
+    }
+}
+
+// Usage
+const generateCode = codeGenerator();
+console.log(generateCode.next().value); // Generates a new 6-character code // Generates another new code
