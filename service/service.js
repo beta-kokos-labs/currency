@@ -23,7 +23,7 @@ let conn;
 peer.on('open', (id) => {
     console.log('My peer ID is: ' + id);
     document.getElementById('inputField').value=id
-    alert('Your peer ID is: ' + id);
+    alert(`Your ID is: ${id} or go to this URL: https://kokos-labs.github.io/currency/test.html?id=${encodeURIComponent(id)} to auto transfer`);
 });
 
 peer.on('connection', (connection) => {
