@@ -1,4 +1,4 @@
-const peer = new Peer();
+ const peer = new Peer();
 let conn;
 
 peer.on('open', (id) => {
@@ -38,5 +38,5 @@ function sendData() {
 function getQueryParam(param) {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
-    return params.get(param) ? params.get(param) : null
+    return params.get(param)
 }
