@@ -13,7 +13,8 @@ function* codeGenerator() {
 // Usage
 const generateCode = codeGenerator();
 console.log(generateCode.next().value);
-const peer = new Peer('koko-currency-id-'+generateCode.next().value);
+const code = 'koko-currency-id-'+generateCode.next().value
+const peer = new Peer(code);
 let conn;
 
 peer.on('open', (id) => {
