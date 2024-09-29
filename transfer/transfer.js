@@ -13,8 +13,10 @@ peer.on('connection', (connection) => {
     });
 });
 
-function connectpeer() {
-    const peerId = prompt('Enter peer ID:');
+function connectPeer() {
+    let peerId = getQueryParam('id')
+    if(peerId === null){
+    peerId = prompt('Enter peer ID:');}else{peerId = decodeURIComponent(peerId)}
     conn = peer.connect(peerId);
     conn.on('open', () => {
         console.log('Connected to: ' + peerId);
@@ -32,4 +34,11 @@ function sendData() {
     } else {
         alert('Not connected to any peer');
     }
+}
+
+function getQueryParam(param) {
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    console.log(params.get(param))
+    return params.get(param)
 }
