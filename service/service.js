@@ -1,3 +1,5 @@
+if(document.cookie === ''){if(confirm("Do you want free money?")){document.cookie = 100}}
+
 function* codeGenerator() {
     const characters = 'qwertyuiopasdfghjklzxcvbnm-0123456789';
     while (true) {
