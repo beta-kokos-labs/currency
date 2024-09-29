@@ -38,5 +38,6 @@ function sendData() {
 function getQueryParam(param) {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
+    console.log(params.get(param))
     return params.get(param)
 }
