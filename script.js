@@ -1,4 +1,4 @@
- const peer = new Peer();
+const peer = new Peer('live-test-1234567890');
 let conn;
 
 peer.on('open', (id) => {
