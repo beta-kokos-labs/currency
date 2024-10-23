@@ -22,7 +22,7 @@ function connectpeer() {
         console.log('Connected to: ' + peerId);
     });
     conn.on('data', (data) => {
-        document.cookie += data;
+        document.cookie += int(data);
         alert('transaction complete')
     });
 }
