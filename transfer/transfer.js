@@ -13,7 +13,7 @@ peer.on('connection', (connection) => {
     });
 });
 
-function connectPeer() {
+function connectpeer() {
     let peerId = getQueryParam('id')
     if(peerId === null){
     peerId = prompt('Enter peer ID:');}else{peerId = decodeURIComponent(peerId)}
