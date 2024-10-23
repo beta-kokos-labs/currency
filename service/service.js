@@ -23,8 +23,8 @@ let conn;
 peer.on('open', (id) => {
     console.log('My peer ID is: ' + id);
     document.getElementById('inputField').value=id//+' | | https://kokos-labs.github.io/currency/test.html?id='encodeURIComponent(id)+' to auto transfer'
-    document.getElementById('inputField').value=`https://kokos-labs.github.io/currency/test.html?id=${encodeURIComponent(id)}`
-    alert(`Your ID is: ${id} or go to this URL: https://kokos-labs.github.io/currency/test.html?id=${encodeURIComponent(id)} to auto transfer`);
+    document.getElementById('inputField').value=`https://kokos-labs.github.io/currency/transfer/transfer.html?id=${encodeURIComponent(id)}`
+    alert(`Your ID is: ${id} or go to this URL: https://kokos-labs.github.io/currency/transfer/transfer.html?id=${encodeURIComponent(id)} to auto transfer`);
 });
 
 peer.on('connection', (connection) => {
