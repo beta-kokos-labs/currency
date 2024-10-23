@@ -48,7 +48,7 @@ function connectPeer() {
 
 function sendData() {
     const data = prompt('how much do you wanna give?');
-    if(data > document.cookie){document.cookie = document.cookie - data
+    if(data > document.cookie){document.cookie = document.cookie - int(data)
     if (conn && conn.open) {
         conn.send(data);
     } else {
